@@ -1,0 +1,14 @@
+input {
+  padding: 5px;
+  width: 400px;
+  font-size: 25px;
+  color: gray;
+  border: none;
+  background: none;
+}
+input:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}
