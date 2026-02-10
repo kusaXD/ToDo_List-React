@@ -6,7 +6,7 @@ function TaskItem(props) {
     <div className="taskItem">
       <strong className="taskItem_content">{props.task.task}</strong>
       <MyButton
-        onClick={() => props.remove(props.task)}
+        onClick={() => props.remove(props.task.id)}
         style={{ backgroundColor: "red" }}
       >
         delete

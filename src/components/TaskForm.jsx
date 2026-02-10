@@ -1,20 +1,14 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 import MyButton from "./UI/Button/MyButton";
 import MyInput from "./UI/Input/MyInput";
 function TaskForm({ create }) {
   const [task, setTask] = useState("");
 
-  function addTask(e) {
+  function createTask(e) {
     e.preventDefault();
-    if (task !== "") {
-      const newTask = {
-        id: Date.now(),
-        task,
-      };
-      create(newTask);
-      setTask("");
-    }
+    create(task);
   }
+
   return (
     <form>
       <MyInput
@@ -22,7 +16,7 @@ function TaskForm({ create }) {
         value={task}
         onChange={(e) => setTask(e.target.value)}
       ></MyInput>
-      <MyButton style={{ backgroundColor: "#00b0ff" }} onClick={addTask}>
+      <MyButton style={{ backgroundColor: "#00b0ff" }} onClick={createTask}>
         Add
       </MyButton>
     </form>
